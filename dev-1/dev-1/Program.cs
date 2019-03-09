@@ -5,14 +5,14 @@ namespace dev_1
     class Program
     {
         /// <summary>
-        /// Entry point
+        /// Entry point.
         /// </summary>
         /// <param name="args">Arguments from command line</param>
         static void Main(string[] args)
         {
-            subsequenceCollector myCollector = new subsequenceCollector();
-            myCollector.collect(args[0]);
-            myCollector.showSubsequences();
+            SubsequenceCollector myCollector = new SubsequenceCollector();
+            myCollector.Collect(args[0]);
+            myCollector.ShowSubsequences();
             Console.ReadLine();
         }
     }

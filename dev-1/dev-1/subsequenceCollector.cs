@@ -3,15 +3,15 @@
 namespace dev_1
 {
     /// <summary>
-    /// This class collect the subsequences and show them
+    /// This class collect the subsequences and show them.
     /// </summary>
-    class subsequenceCollector
+    class SubsequenceCollector
     {
         string[] subsequences = { };
         /// <summary>
-        /// This method collects substrings into array subsequences
+        /// This method collects subsequences into array subsequences.
         /// </summary>
-        public void collect(string sequence)
+        public void Collect(string sequence)
         {
             if (sequence.Length < 2)
             {
@@ -29,9 +29,9 @@ namespace dev_1
                 }
         }
         /// <summary>
-        /// This method shows the array with subsequences
+        /// This method shows the array with subsequences.
         /// </summary>
-        public void showSubsequences()
+        public void ShowSubsequences()
         {
             for (int i = 0; i < subsequences.Length; i++)
                 Console.WriteLine(subsequences[i]);
