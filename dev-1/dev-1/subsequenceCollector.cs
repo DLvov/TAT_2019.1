@@ -7,25 +7,38 @@ namespace dev_1
     /// </summary>
     class SubsequenceCollector
     {
-        string[] subsequences = { };
         /// <summary>
-        /// This method collects subsequences into array subsequences.
+        /// This array is storage for subsequences
         /// </summary>
-        public void Collect(string sequence)
+        private string[] subsequenceStorage = Array.Empty<String>();
+        private string inputedSequence = String.Empty;
+        /// <summary>
+        /// Constructor check input sequense
+        /// </summary>
+        public SubsequenceCollector(string inputedSequence)
         {
-            if (sequence.Length < 2)
+            if (inputedSequence.Length < 2)
             {
-                Console.WriteLine("Your string is incorrect! (Length < 2)");
-                return;
+                throw new FormatException();
             }
-            for (int i = 0; i < sequence.Length - 1; i++)
-                for (int j = i; j < sequence.Length - 1; j++)
+            else
+            {
+                this.inputedSequence = inputedSequence;
+            }
+        }
+            /// <summary>
+            /// This method collects subsequences into subsequenceArray.
+            /// </summary>
+            public void CollectSubsequences()
+        {
+            for (int i = 0; i < inputedSequence.Length - 1; i++)
+                for (int j = i; j < inputedSequence.Length - 1; j++)
                 {
-                    if (sequence[j] == sequence[j + 1])
+                    if (inputedSequence[j] == inputedSequence[j + 1])
                         break;
-                    string subsequence = sequence.Substring(i, j - i + 2);
-                    Array.Resize(ref subsequences, subsequences.Length + 1);
-                    subsequences[subsequences.Length - 1] = subsequence;
+                    string subsequence = inputedSequence.Substring(i, j - i + 2);
+                    Array.Resize(ref subsequenceStorage, subsequenceStorage.Length + 1);
+                    subsequenceStorage[subsequenceStorage.Length - 1] = subsequence;
                 }
         }
         /// <summary>
@@ -33,8 +46,13 @@ namespace dev_1
         /// </summary>
         public void ShowSubsequences()
         {
-            for (int i = 0; i < subsequences.Length; i++)
-                Console.WriteLine(subsequences[i]);
+            foreach(string subsequence in subsequenceStorage)
+                Console.WriteLine(subsequence);
+        }
+        public void CollectAndShowSubsequences()
+        {
+            CollectSubsequences();
+            ShowSubsequences();
         }
     }
 }
