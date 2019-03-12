@@ -7,9 +7,6 @@ namespace dev_1
     /// </summary>
     class SubsequenceCollector
     {
-        /// <summary>
-        /// This array is storage for subsequences
-        /// </summary>
         private string[] subsequenceStorage = Array.Empty<String>();
         private string inputedSequence = String.Empty;
         /// <summary>
@@ -26,10 +23,10 @@ namespace dev_1
                 this.inputedSequence = inputedSequence;
             }
         }
-            /// <summary>
-            /// This method collects subsequences into subsequenceArray.
-            /// </summary>
-            public void CollectSubsequences()
+        /// <summary>
+        /// This method collects subsequences into array subsequenceStorage.
+        /// </summary>
+        public void CollectSubsequences()
         {
             for (int i = 0; i < inputedSequence.Length - 1; i++)
                 for (int j = i; j < inputedSequence.Length - 1; j++)
@@ -42,7 +39,7 @@ namespace dev_1
                 }
         }
         /// <summary>
-        /// This method shows the array with subsequences.
+        /// This method shows the array with subsequences subsequenceStorage.
         /// </summary>
         public void ShowSubsequences()
         {
