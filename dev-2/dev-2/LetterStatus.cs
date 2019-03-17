@@ -1,5 +1,8 @@
 ﻿namespace dev_2
 {
+    /// <summary>
+    /// This class contains characteristics of letter
+    /// </summary>
     class LetterStatus
     {
         public char letter;

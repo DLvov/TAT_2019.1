@@ -4,16 +4,36 @@ using System.Text;
 
 namespace dev_2
 {
-    class PhonemeBuilder
+    /// <summary>
+    /// This class can build and show phoneme of word.
+    /// </summary>
+    class PhonemeBuilderFromWord
     {
-        public string BuildPhoneme(string word)
+        string word;
+        StringBuilder phoneme = new StringBuilder();
+
+        /// <summary>
+        /// This constructor checks the inputed word, and if it is longer than two, sets it.
+        /// </summary>
+        /// <param name="word">Inputed word</param>
+        public PhonemeBuilderFromWord(string word)
         {
-            var phoneme = new StringBuilder();
+            if (word.Length < 2)
+            {
+                throw new FormatException();
+            }
+            this.word = word;
+        }
+        /// <summary>
+        /// This method builds a phoneme based on data from a list of letter statuses of word.
+        /// </summary>
+        public void BuildPhoneme()
+        {
             var statusList = new List<LetterStatus>();
             foreach (char letter in word)
             {
-                var letterStatusChecker = new LetterStatusMaker(letter);
-                statusList.Add(letterStatusChecker.GetLetterStatus());
+                var letterStatusMaker = new LetterStatusMaker(letter);
+                statusList.Add(letterStatusMaker.GetLetterStatus());
             }
             for (var index = 0; index < statusList.Count; index++)
             {
@@ -29,17 +49,15 @@ namespace dev_2
                     case 'ь':
                         phoneme.Append(currentStatus.pair);
                         break;
+                    // No accent 'о' reads like 'а'.
                     case 'о':
-                        if (nextStatus.letter == '\0')
-                        {
-                            phoneme.Append('a');
-                        }
-                        else
-                        {
                             phoneme.Append(nextStatus.letter == '+' ? 'о' : 'а');
-                        }
                         break;
                     default:
+                        // The vowels of "ю", "я", "ё", "е" : 
+                        //   soften the previous consonant sound and transform into "y", "a", "o", "e" ,
+                        //   at the beginning of the word, after other vowels 
+                        //   and after "ь", "ъ" are converted into "йу", "йа", "йо", "йэ".
                         if (!currentStatus.isConsonant && currentStatus.isPaired)
                         {
                             if (prevStatus.letter == '\0' || !prevStatus.isConsonant || prevStatus.isSpecial)
@@ -53,6 +71,9 @@ namespace dev_2
                             phoneme.Append(currentStatus.pair);
                             break;
                         }
+                        // Voicing / stunning consonants - the voiced consonant in front of the deaf 
+                        // and at the end of the word becomes deaf, and the deaf consonant in front 
+                        // of the voiced becomes the voiced
                         if (currentStatus.isConsonant && currentStatus.isPaired)
                         {
                             if (currentStatus.isVoiced)
@@ -80,15 +101,19 @@ namespace dev_2
                         break;
                 }
             }
-
-            return phoneme.ToString();
         }
-        public void ShowPhoneme(string phoneme)
+        // Shows a phoneme
+        public void ShowPhoneme()
         {
-            foreach(char c in phoneme)
+            foreach(char c in phoneme.ToString())
             {
                 Console.Write(c);
             }
+        }
+        public void BuildAndShowPhoneme()
+        {
+            BuildPhoneme();
+            ShowPhoneme();
         }
     }
 }

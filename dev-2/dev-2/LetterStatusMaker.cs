@@ -1,5 +1,8 @@
 ﻿namespace dev_2
 {
+    /// <summary>
+    /// This class can make LatterStatus of letter.
+    /// </summary>
     class LetterStatusMaker
     {
         private const string CONSONANTS = "бвгджзйлмнрпфктшсхцчщ";
@@ -16,7 +19,10 @@
         {
             this.letter = letter;
         }
-
+        /// <summary>
+        /// This method returns LetterStatus.
+        /// </summary>
+        /// <returns>Status of the letter</returns>
         public LetterStatus GetLetterStatus()
         {
             if (SpecialSignCheck())
@@ -25,7 +31,9 @@
             }
             return new LetterStatus(letter, IsConsonant(), IsVoicedConsonant(), IsPaired(), pairLetter);
         }
-
+        /// <summary>
+        /// All methods below check some characteristics of the letter and returns them.
+        /// </summary>
         public bool SpecialSignCheck()
         {
             if (letter == 'ь')

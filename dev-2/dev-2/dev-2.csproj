@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LetterStatus.cs" />
-    <Compile Include="PhonemeBuilder.cs" />
+    <Compile Include="PhonemeBuilderFromWord.cs" />
     <Compile Include="LetterStatusMaker.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
