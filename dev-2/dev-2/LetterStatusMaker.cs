@@ -1,7 +1,4 @@
-﻿using System;
-using System.Text;
-
-namespace dev_2
+﻿namespace dev_2
 {
     class LetterStatusMaker
     {
@@ -28,6 +25,7 @@ namespace dev_2
             }
             return new LetterStatus(letter, IsConsonant(), IsVoicedConsonant(), IsPaired(), pairLetter);
         }
+
         public bool SpecialSignCheck()
         {
             if (letter == 'ь')

@@ -18,8 +18,8 @@ namespace dev_2
             for (var index = 0; index < statusList.Count; index++)
             {
                 LetterStatus currentStatus = statusList[index];
-                LetterStatus prevStatus = (index == 0 ? null : statusList[index - 1]);
-                LetterStatus nextStatus = (index == statusList.Count - 1 ? null : statusList[index + 1]);
+                LetterStatus prevStatus = (index == 0 ? new LetterStatus('\0') : statusList[index - 1]);
+                LetterStatus nextStatus = (index == statusList.Count - 1 ? new LetterStatus('\0') : statusList[index + 1]);
                 switch (currentStatus.letter)
                 {
                     case '+':
@@ -30,7 +30,7 @@ namespace dev_2
                         phoneme.Append(currentStatus.pair);
                         break;
                     case 'о':
-                        if (nextStatus == null)
+                        if (nextStatus.letter == '\0')
                         {
                             phoneme.Append('a');
                         }
@@ -42,7 +42,7 @@ namespace dev_2
                     default:
                         if (!currentStatus.isConsonant && currentStatus.isPaired)
                         {
-                            if (prevStatus == null || !prevStatus.isConsonant || prevStatus.isSpecial)
+                            if (prevStatus.letter == '\0' || !prevStatus.isConsonant || prevStatus.isSpecial)
                             {
                                 phoneme.Append('й');
                             }
@@ -53,13 +53,42 @@ namespace dev_2
                             phoneme.Append(currentStatus.pair);
                             break;
                         }
-                        
+                        if (currentStatus.isConsonant && currentStatus.isPaired)
+                        {
+                            if (currentStatus.isVoiced)
+                            {
+                                if (nextStatus.letter == '\0' || (!nextStatus.isVoiced && nextStatus.isConsonant && nextStatus.isPaired))
+                                {
+                                    phoneme.Append(currentStatus.pair);
+                                    currentStatus.isVoiced = false;
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                if(nextStatus.isConsonant && nextStatus.isVoiced && nextStatus.isPaired)
+                                {
+                                    phoneme.Append(currentStatus.pair);
+                                    currentStatus.isVoiced = true;
+                                    break;
+                                    
+                                }
+                            }
+
+                        }
                         phoneme.Append(currentStatus.letter);
                         break;
                 }
             }
 
             return phoneme.ToString();
+        }
+        public void ShowPhoneme(string phoneme)
+        {
+            foreach(char c in phoneme)
+            {
+                Console.Write(c);
+            }
         }
     }
 }

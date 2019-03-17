@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace dev_2
+﻿namespace dev_2
 {
     class LetterStatus
     {

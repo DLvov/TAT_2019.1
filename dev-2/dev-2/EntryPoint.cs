@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace dev_2
 {
@@ -11,7 +7,8 @@ namespace dev_2
         static void Main(string[] args)
         {
             var phonemeBuilder = new PhonemeBuilder();
-            phonemeBuilder.BuildPhoneme(args[0]);
+            phonemeBuilder.ShowPhoneme(phonemeBuilder.BuildPhoneme(args[0]));
+            Console.ReadLine();
         }
     }
 }
