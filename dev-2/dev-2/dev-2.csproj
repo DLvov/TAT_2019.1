@@ -43,8 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LetterStatus.cs" />
     <Compile Include="PhonemeBuilder.cs" />
-    <Compile Include="LetterStatusChecker.cs" />
+    <Compile Include="LetterStatusMaker.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

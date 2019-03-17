@@ -10,6 +10,8 @@ namespace dev_2
     {
         static void Main(string[] args)
         {
+            var phonemeBuilder = new PhonemeBuilder();
+            phonemeBuilder.BuildPhoneme(args[0]);
         }
     }
 }
