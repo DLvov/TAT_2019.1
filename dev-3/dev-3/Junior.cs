@@ -1,10 +1,11 @@
-﻿using System;
-
-namespace dev_3
+﻿namespace dev_3
 {
     class Junior : Employee
     {
-        private static int _salary = 500;
-        private static int _performance = 1;
+        public Junior()
+        {
+            Salary = 500;
+            Performance = 1;
+        }
     }
 }
