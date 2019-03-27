@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityInfo.cs" />
+    <Compile Include="GUIDSetter.cs" />
     <Compile Include="LaboratoryLesson.cs" />
     <Compile Include="LectureLesson.cs" />
     <Compile Include="Lesson.cs" />

@@ -1,7 +1,7 @@
 ﻿
 namespace dev_4
 {
-    abstract class Lesson
+    abstract class Lesson : EntityInfo
     {
 
     }
