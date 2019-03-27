@@ -1,10 +1,27 @@
-﻿
+﻿using System;
+
 namespace dev_4
 {
-    abstract class EntityInfo
+    public abstract class EntityInfo
     {
-        public string TextDescription { get; set; }
-        public string guid { get; set; }
+        public string GUID { get; set; }
+        private string _textDescription;
+
+        public string TextDescription
+        {
+            get
+            {
+                return _textDescription;
+            }
+            set
+            {
+                if(value.Length > 256)
+                {
+                    throw new FormatException("Text description length cannot be > 256");
+                }
+                _textDescription = value;
+            }
+        }
 
         override public string ToString()
         {
@@ -13,7 +30,7 @@ namespace dev_4
 
         public bool Equals(EntityInfo obj)
         {
-            return guid == obj.guid;
+            return GUID == obj.GUID;
         }
     }
 }

@@ -10,7 +10,18 @@ namespace dev_4
     {
         static void Main(string[] args)
         {
+            try
+            {
 
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Something wrong!");
+            }
         }
     }
 }
