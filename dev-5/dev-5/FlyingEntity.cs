@@ -2,9 +2,21 @@
 {
     abstract class FlyingEntity : IFlyable
     {
+        public string Name { get; set; }
         public int Speed { get; set; }
-        public abstract void FlyTo();
-        public abstract void WhoAmI();
+        public Point currentPoint { get; set; }
+        public Point prevPoint { get; set; }
         public abstract double GetFlyTime();
+
+        public virtual string WhoAmI()
+        {
+            return "I am a " + Name;
+        }
+
+        public virtual void FlyTo(Point newPoint)
+        {
+            prevPoint = currentPoint;
+            currentPoint = newPoint;
+        }
     }
 }

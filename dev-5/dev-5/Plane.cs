@@ -4,17 +4,9 @@
     {
         public Plane()
         {
-
-        }
-
-        public override void FlyTo()
-        {
-
-        }
-
-        public override void WhoAmI()
-        {
-
+            Name = "Plane";
+            Speed = 200;
+            // starting speed == 200 km/h
         }
 
         public override double GetFlyTime()

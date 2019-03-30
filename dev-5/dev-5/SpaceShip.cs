@@ -4,17 +4,9 @@
     {
         public SpaceShip()
         {
-
-        }
-
-        public override void FlyTo()
-        {
-
-        }
-
-        public override void WhoAmI()
-        {
-
+            Name = "SpaceShip";
+            Speed = 8000;
+            // speed == 8000 km/s
         }
 
         public override double GetFlyTime()

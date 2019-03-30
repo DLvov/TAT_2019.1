@@ -2,8 +2,8 @@
 {
     interface IFlyable
     {
-        void FlyTo();
-        void WhoAmI();
+        void FlyTo(Point newPoint);
+        string WhoAmI();
         double GetFlyTime();
     }
 }

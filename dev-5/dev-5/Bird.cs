@@ -4,17 +4,7 @@
     {
         public Bird()
         {
-
-        }
-
-        public override void FlyTo()
-        {
-
-        }
-
-        public override void WhoAmI()
-        {
-            
+            Name = "Bird"; 
         }
 
         public override double GetFlyTime()
