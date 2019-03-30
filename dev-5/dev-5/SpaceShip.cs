@@ -11,7 +11,7 @@
 
         public override double GetFlyTime()
         {
-            return 0;
+            return currentPoint.getDistance(prevPoint) / Speed;
         }
     }
 }
