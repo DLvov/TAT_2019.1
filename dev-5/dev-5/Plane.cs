@@ -2,14 +2,14 @@
 {
     /// <summary>
     /// This class corresponds to the plane.
-    /// Speed for plane will be measured in km / h.
+    /// Speed for plane will be measured in km/h.
     /// </summary>
     class Plane : FlyingEntity
     {
         private const int INITIAL_SPEED = 200;
 
         /// <summary>
-        /// This constructor inicialize name and speed.
+        /// This constructor initialize name and speed.
         /// </summary>
         public Plane()
         {
@@ -18,14 +18,15 @@
         }
 
         /// <summary>
-        /// This method returns plane flight time. Plane speed increases by 10 km/h every 10 km.
+        /// This method returns plane last flight time. Plane speed increases by 10 km/h every 10 km.
         /// After the flight the speed of the plane becomes the initial.
         /// </summary>
-        /// <returns>Time of the flight</returns>
+        /// <returns>Time of the last flight in seconds</returns>
         public override double GetFlyTime()
         {
+            int secondsInHour = 3600;
             double time = 0;
-            double remainingDistance = currentPoint.getDistance(prevPoint);
+            double remainingDistance = CurrentPoint.getDistance(PrevPoint);
             int acceleration = 10;
             int accelerationDistance = 10;
 
@@ -45,7 +46,7 @@
                 }
             }
 
-            return time;
+            return time * secondsInHour;
         }
     }
 }
