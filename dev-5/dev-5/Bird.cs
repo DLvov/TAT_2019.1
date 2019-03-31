@@ -12,7 +12,7 @@ namespace dev_5
         public override double GetFlyTime()
         {
             var random = new Random();
-            Speed = random.Next(0, 20);
+            Speed = random.Next(0, 20); // km/h
             return currentPoint.getDistance(prevPoint) / Speed;
         }
     }

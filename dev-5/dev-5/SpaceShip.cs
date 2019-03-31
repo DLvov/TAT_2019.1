@@ -5,8 +5,7 @@
         public SpaceShip()
         {
             Name = "SpaceShip";
-            Speed = 8000;
-            // speed == 8000 km/s
+            Speed = 8000; // km/s
         }
 
         public override double GetFlyTime()
