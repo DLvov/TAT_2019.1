@@ -24,7 +24,7 @@ namespace cw_3
         /// <returns>Sqaure of the triangle</returns>
         public override double GetSquare()
         {
-            return Math.Sqrt(3.0) * AB / 4;
+            return Math.Sqrt(3.0) * sides[0] / 4;
         }
     }
 }

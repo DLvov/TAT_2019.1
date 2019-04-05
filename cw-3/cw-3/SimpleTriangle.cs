@@ -24,8 +24,8 @@ namespace cw_3
         /// <returns>Sqaure of the triangle</returns>
         public override double GetSquare()
         {
-            double perimeter = (AB + BC + CA) / 2;
-            return Math.Sqrt(perimeter * (perimeter - AB) * (perimeter - BC) * (perimeter - CA));
+            double semiPerimeter = (sides[0] + sides[1] + sides[2]) / 2;
+            return Math.Sqrt(semiPerimeter * (semiPerimeter - sides[0]) * (semiPerimeter - sides[1]) * (semiPerimeter - sides[2]));
         }
     }
 }

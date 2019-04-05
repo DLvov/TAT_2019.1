@@ -22,17 +22,17 @@
         /// <returns>Sqaure of the triangle</returns>
         public override double GetSquare()
         {
-            if (AB > BC && AB > CA)
+            if (sides[0] > sides[1] && sides[0] > sides[2])
             {
-                return BC * CA / 2;
+                return sides[1] * sides[2] / 2;
             }
-            else if (BC > AB && BC > CA)
+            else if (sides[1] > sides[0] && sides[1] > sides[2])
             {
-                return AB * CA / 2;
+                return sides[0] * sides[2] / 2;
             }
             else 
             {
-                return AB * BC / 2;
+                return sides[0] * sides[1] / 2;
             }
         }
     }
