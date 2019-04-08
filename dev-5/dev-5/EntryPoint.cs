@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace dev_5
 {
@@ -28,6 +25,7 @@ namespace dev_5
                 flyableEntities[1] = new Plane();
                 flyableEntities[2] = new SpaceShip();
                 var results = new List<double>();
+
                 foreach (var item in flyableEntities)
                 {
                     item.FlyTo(destinationPoint);
