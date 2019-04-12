@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace dev_7
 {
@@ -32,9 +30,9 @@ namespace dev_7
 
         public double GetAveragePrice(string brand)
         {
-            if (Catalog.Select(vehicle => vehicle.Brand).Contains(brand))
+            if (Catalog.Select(vehicle => vehicle.Brand).Contains(brand.ToUpper()))
             {
-                return Catalog.Where(vehicle => vehicle.Brand == brand).Select(vehicle => vehicle.Price).Average();
+                return Catalog.Where(vehicle => vehicle.Brand == brand.ToUpper()).Select(vehicle => vehicle.Price).Average();
             }
             else
             {
