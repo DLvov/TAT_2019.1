@@ -8,9 +8,9 @@ namespace dev_7
 {
     class VehicleCatalog
     {
-        public List<Vehicle> Catalog { get; set; }
+        public IEnumerable<Vehicle> Catalog { get; set; }
 
-        public VehicleCatalog(List<Vehicle> vehicleList)
+        public VehicleCatalog(IEnumerable<Vehicle> vehicleList)
         {
             Catalog = vehicleList;
         }

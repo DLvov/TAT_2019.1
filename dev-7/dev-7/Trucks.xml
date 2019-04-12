@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<trucks>
+  <truck>
+    <brand>Audi</brand>
+    <model>A</model>
+    <amount>10</amount>
+    <price>10000</price>
+  </truck>
+  <truck>
+    <brand>Volvo</brand>
+    <model>B</model>
+    <amount>20</amount>
+    <price>13000</price>
+  </truck>
+  <truck>
+    <brand>Nissan</brand>
+    <model>C</model>
+    <amount>25</amount>
+    <price>11000</price>
+  </truck>
+  <truck>
+    <brand>Nissan</brand>
+    <model>D</model>
+    <amount>43</amount>
+    <price>12500</price>
+  </truck>
+  <truck>
+    <brand>BMV</brand>
+    <model>E</model>
+    <amount>7</amount>
+    <price>20000</price>
+  </truck>
+</trucks>

@@ -12,6 +12,10 @@ namespace dev_6
         {
             try
             {
+                if (args.Length != 2)
+                {
+                    throw new FormatException("The program must accept two XML file names!");
+                }
 
             }
             catch (FormatException ex)
