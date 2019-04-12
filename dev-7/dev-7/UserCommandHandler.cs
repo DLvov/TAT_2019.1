@@ -18,6 +18,16 @@ namespace dev_7
             Exit
         }
 
+        public VehicleCatalog Catalog { get; set; }
 
+        public UserCommandHandler(VehicleCatalog catalog)
+        {
+            this.Catalog = catalog;
+        }
+
+        public void RequestUserCommand()
+        {
+
+        }
     }
 }

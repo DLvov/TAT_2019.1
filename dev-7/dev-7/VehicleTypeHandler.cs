@@ -8,32 +8,33 @@ namespace dev_7
 {
     class VehicleTypeHandler
     {
-        private enum VehicleTypes
-        {
-            Car = 1,
-            Truck
-        }
+        private Dictionary<int, string> vehicleTypes = new Dictionary<int, string> { {1, "car"}, {2, "truck"} };
 
         public string RequestVehicleType()
         {
             DisplayInfo();
-            bool exit = false;
-            int vehicleType;
 
-            while (!exit)
+            while (true)
             {
-                if(int.TryParse(Console.ReadLine(), out vehicleType))
+                if (int.TryParse(Console.ReadLine(), out int vehicleTypeNumber))
                 {
-                    
+                    if (vehicleTypes.ContainsKey(vehicleTypeNumber))
+                    {
+                        return vehicleTypes[vehicleTypeNumber];
+                    }
+                    else
+                    {
+                        Console.WriteLine("Incorrect number of vehicle!");
+                        DisplayInfo();
+                    }
+
                 }
             }
-
-            return vehicleType;
         }
 
         public void DisplayInfo()
         {
-            Console.WriteLine("Enter type of car(1-2):\n" + $"1. Car\n" + $"2. Truck");
+            Console.WriteLine("Enter type of vehicle(1-2):\n" + $"1. Car\n" + $"2. Truck");
         }
     }
 }
