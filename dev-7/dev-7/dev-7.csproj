@@ -46,6 +46,8 @@
     <Compile Include="AveragePriceCommand.cs" />
     <Compile Include="AveragePriceTypeCommand.cs" />
     <Compile Include="Car.cs" />
+    <Compile Include="TypesOfXML.cs" />
+    <Compile Include="UserCommands.cs" />
     <Compile Include="ExcecuteCommand.cs" />
     <Compile Include="UserCommandHandler.cs" />
     <Compile Include="VehicleCatalog.cs" />
@@ -58,6 +60,7 @@
     <Compile Include="Vehicle.cs" />
     <Compile Include="VehicleGetterFromXML.cs" />
     <Compile Include="VehicleTypeHandler.cs" />
+    <Compile Include="VehicleTypes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

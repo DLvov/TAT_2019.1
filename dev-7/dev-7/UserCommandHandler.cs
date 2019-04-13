@@ -2,29 +2,30 @@
 
 namespace dev_7
 {
+    /// <summary>
+    /// This class requests user command from user and then executes it.
+    /// </summary>
     class UserCommandHandler
     {
-        private enum UserCommands
-        {
-            CountAll = 1,
-            CountTypes,
-            AveragePrice,
-            AveragePriceType,
-            Execute,
-            Exit
-        }
-        
         public VehicleCatalog Catalog { get; set; }
         public Command Command { get; set; }
 
+        /// <summary>
+        /// This constructor sets the catalog property.
+        /// </summary>
+        /// <param name="catalog">Catalog of vehicles</param>
         public UserCommandHandler(VehicleCatalog catalog)
         {
             this.Catalog = catalog;
         }
 
+        /// <summary>
+        /// This method requests user command from user and then executes it.
+        /// </summary>
         public void RequestUserCommand()
         {
             DisplayInfo();
+
             while (int.TryParse(Console.ReadLine(), out int userCommandNumber) && (UserCommands)userCommandNumber != UserCommands.Exit)
             {
                 switch ((UserCommands)userCommandNumber)
@@ -58,10 +59,13 @@ namespace dev_7
             }
         }
 
+        /// <summary>
+        /// This method displays information for user.
+        /// </summary>
         public void DisplayInfo()
         {
             Console.WriteLine("-----------------------------------\n" + "Enter command(1-6):\n" + "1. Count all\n" + "2. Count types\n" +
-                "3. Average price\n" + "4. Average price type\n" + "5. Execute\n" + "6. Exit" + "-----------------------------------");
+                "3. Average price\n" + "4. Average price type\n" + "5. Execute\n" + "6. Exit\n" + "-----------------------------------");
         }
     }
 }

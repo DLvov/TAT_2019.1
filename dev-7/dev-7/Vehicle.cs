@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace dev_7
+﻿namespace dev_7
 {
+    /// <summary>
+    /// This class is abstract vehicle.
+    /// </summary>
     abstract class Vehicle
     {
         public string Brand { get; set; }

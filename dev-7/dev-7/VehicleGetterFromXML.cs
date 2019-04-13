@@ -5,8 +5,16 @@ using System.Xml.Linq;
 
 namespace dev_7
 {
+    /// <summary>
+    /// This class for parsing XML file
+    /// </summary>
     static class VehicleGetterFromXML
     {
+        /// <summary>
+        /// This method loads XML file and gets cars from it.
+        /// </summary>
+        /// <param name="fileName">Name of XML file with cars</param>
+        /// <returns>Collection of cars</returns>
         public static IEnumerable<Car> GetCarsFromXML(string fileName)
         {
             var Doc = new XDocument();
@@ -21,6 +29,11 @@ namespace dev_7
              ));
         }
 
+        /// <summary>
+        /// This method loads XML file and gets trucks from it.
+        /// </summary>
+        /// <param name="fileName">Name of XML file with trucks</param>
+        /// <returns>Collection of trucks</returns>
         public static IEnumerable<Truck> GetTrucksFromXML(string fileName)
         {
             var Doc = new XDocument();
