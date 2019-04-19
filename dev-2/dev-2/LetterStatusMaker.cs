@@ -15,10 +15,15 @@
         char letter;
         char pairLetter;
 
+        /// <summary>
+        /// This constructor initialize letter.
+        /// </summary>
+        /// <param name="letter">Letter</param>
         public LetterStatusMaker(char letter)
         {
             this.letter = letter;
         }
+
         /// <summary>
         /// This method returns LetterStatus.
         /// </summary>
@@ -31,9 +36,11 @@
             }
             return new LetterStatus(letter, IsConsonant(), IsVoicedConsonant(), IsPaired(), pairLetter);
         }
+
         /// <summary>
-        /// All methods below check some characteristics of the letter and returns them.
+        /// This method returns result of special sign checking.
         /// </summary>
+        /// <returns>Result of special sign checking</returns>
         public bool SpecialSignCheck()
         {
             if (letter == 'ь')
@@ -42,18 +49,38 @@
             }
             return letter == '+' || letter == 'ь' || letter == 'ъ';
         }
+
+        /// <summary>
+        /// This method returns result of consonant checking.
+        /// </summary>
+        /// <returns>Result of consonant checking</returns>
         public bool IsConsonant()
         {
             return CONSONANTS.Contains(letter.ToString());
         }
+
+        /// <summary>
+        /// This method returns result of voiced consonant checking.
+        /// </summary>
+        /// <returns>Result of voiced consonant checking</returns>
         public bool IsVoicedConsonant()
         {
             return VOICED_CONSONANTS.Contains(letter.ToString());
         }
+
+        /// <summary>
+        /// This method returns result of pair checking.
+        /// </summary>
+        /// <returns>Result of pair checking</returns>
         public bool IsPaired()
         {
             return IsPairedConsonant() || IsDoubleSoundVowel();
         }
+
+        /// <summary>
+        /// This method returns result of pair consonant checking, if it true sets pair letter.
+        /// </summary>
+        /// <returns>Result of pair consonant checking</returns>
         public bool IsPairedConsonant()
         {
             if (PAIRED_CONSONANT.Contains(letter.ToString()))
@@ -62,6 +89,11 @@
             }
             return PAIRED_CONSONANT.Contains(letter.ToString());
         }
+
+        /// <summary>
+        /// This method returns result of pair vowel checking, if it true sets pair letter.
+        /// </summary>
+        /// <returns>Result of pair vowel checking</returns>
         public bool IsDoubleSoundVowel()
         {
             if (DOUBLE_SOUND_VOWELS.Contains(letter.ToString()))

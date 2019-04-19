@@ -24,17 +24,20 @@ namespace dev_2
             }
             this.word = word;
         }
+
         /// <summary>
         /// This method builds a phoneme based on data from a list of letter statuses of word.
         /// </summary>
         public void BuildPhoneme()
         {
             var statusList = new List<LetterStatus>();
+
             foreach (char letter in word)
             {
                 var letterStatusMaker = new LetterStatusMaker(letter);
                 statusList.Add(letterStatusMaker.GetLetterStatus());
             }
+
             for (var index = 0; index < statusList.Count; index++)
             {
                 LetterStatus currentStatus = statusList[index];
@@ -92,24 +95,26 @@ namespace dev_2
                                     phoneme.Append(currentStatus.pair);
                                     currentStatus.isVoiced = true;
                                     break;
-                                    
                                 }
                             }
-
                         }
                         phoneme.Append(currentStatus.letter);
                         break;
                 }
             }
         }
-        // Shows a phoneme
+
+        /// <summary>
+        /// This method 
+        /// </summary>
         public void ShowPhoneme()
         {
-            foreach(char c in phoneme.ToString())
-            {
-                Console.Write(c);
-            }
+            Console.WriteLine(phoneme.ToString());
         }
+
+        /// <summary>
+        /// This method calls methods BuildPhoneme and ShowPhoneme.
+        /// </summary>
         public void BuildAndShowPhoneme()
         {
             BuildPhoneme();

@@ -1,11 +1,15 @@
 ﻿using System;
+using System.Text;
 
 namespace dev_2
 {
+    /// <summary>
+    /// Entry point of the program.
+    /// </summary>
     class EntryPoint
     {
         /// <summary>
-        /// Entry point of programm
+        /// This method builds a phonemes of inputed words
         /// </summary>
         /// <param name="args">Arguments from command line</param>
         /// <returns 0>Normal work</returns>
@@ -15,7 +19,12 @@ namespace dev_2
         {
             try
             {
-                var myPhonemeBuilder = new PhonemeBuilderFromWord(args[0]);
+                var sentence = new StringBuilder();
+                foreach (var arg in args)
+                {
+                    sentence.Append(arg);
+                }
+                var myPhonemeBuilder = new PhonemeBuilderFromWord(sentence.ToString());
                 myPhonemeBuilder.BuildAndShowPhoneme();
                 return 0;
             }
