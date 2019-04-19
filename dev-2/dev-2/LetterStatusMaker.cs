@@ -1,16 +1,19 @@
-﻿namespace dev_2
+﻿using System;
+
+namespace dev_2
 {
     /// <summary>
     /// This class can make LatterStatus of letter.
     /// </summary>
-    class LetterStatusMaker
+    public class LetterStatusMaker
     {
-        private const string CONSONANTS = "бвгджзйлмнрпфктшсхцчщ";
-        private const string VOICED_CONSONANTS = "бвгджзйлмнр";
-        private const string PAIRED_CONSONANT = "бвгджзпфктшс";
-        private const string PAIR_FOR_CONSONANT = "пфктшсбвгджз";
-        private const string DOUBLE_SOUND_VOWELS = "яюеё";
-        private const string SINGLE_SOUND_VOWELS = "ауэоиы";
+        private static readonly string CONSONANTS = "бвгджзйлмнрпфктшсхцчщ";
+        private static readonly string VOICED_CONSONANTS = "бвгджзйлмнр";
+        private static readonly string PAIRED_CONSONANT = "бвгджзпфктшс";
+        private static readonly string PAIR_FOR_CONSONANT = "пфктшсбвгджз";
+        private static readonly string DOUBLE_SOUND_VOWELS = "яюеё";
+        private static readonly string SINGLE_SOUND_VOWELS = "ауэоиы";
+        private static readonly string AVAILIABLE_SYMBOLS = "бвгджзйлмнрпфктшсхцчщяюеёауэоиы+ьъ";
 
         char letter;
         char pairLetter;
@@ -21,6 +24,7 @@
         /// <param name="letter">Letter</param>
         public LetterStatusMaker(char letter)
         {
+            AvailiableSymbolCheck(letter);
             this.letter = letter;
         }
 
@@ -101,6 +105,18 @@
                 pairLetter = SINGLE_SOUND_VOWELS[DOUBLE_SOUND_VOWELS.IndexOf(letter)];
             }
             return DOUBLE_SOUND_VOWELS.Contains(letter.ToString());
+        }
+
+        /// <summary>
+        /// This method checks if the symbol incorrect and throw exception if it is.
+        /// </summary>
+        /// <param name="symbol">Symbol will be checked</param>
+        public static void AvailiableSymbolCheck(char symbol)
+        {
+            if (!AVAILIABLE_SYMBOLS.Contains(symbol.ToString()))
+            {
+                throw new Exception("Unknown symbol!");
+            }
         }
     }
 }

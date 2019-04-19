@@ -7,7 +7,7 @@ namespace dev_2
     /// <summary>
     /// This class can build and show phoneme of word.
     /// </summary>
-    class PhonemeBuilderFromWord
+    public class PhonemeBuilderFromWord
     {
         string word;
         StringBuilder phoneme = new StringBuilder();
@@ -20,7 +20,7 @@ namespace dev_2
         {
             if (word.Length < 2)
             {
-                throw new FormatException("String length is shorter than 2 characters!");
+                throw new Exception("String length is shorter than 2 characters!");
             }
             this.word = word;
         }
