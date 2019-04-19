@@ -20,7 +20,7 @@ namespace dev_2
         {
             if (word.Length < 2)
             {
-                throw new FormatException();
+                throw new FormatException("String length is shorter than 2 characters!");
             }
             this.word = word;
         }
@@ -105,7 +105,7 @@ namespace dev_2
         }
 
         /// <summary>
-        /// This method 
+        /// This method shows a phoneme.
         /// </summary>
         public void ShowPhoneme()
         {

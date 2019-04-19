@@ -19,18 +19,17 @@ namespace dev_2
         {
             try
             {
-                var sentence = new StringBuilder();
                 foreach (var arg in args)
                 {
-                    sentence.Append(arg);
+                    var myPhonemeBuilder = new PhonemeBuilderFromWord(arg.ToString());
+                    myPhonemeBuilder.BuildAndShowPhoneme();
                 }
-                var myPhonemeBuilder = new PhonemeBuilderFromWord(sentence.ToString());
-                myPhonemeBuilder.BuildAndShowPhoneme();
+                
                 return 0;
             }
-            catch (FormatException)
+            catch (FormatException ex)
             {
-                Console.WriteLine("String length is shorter than 2 characters!");
+                Console.WriteLine(ex.Message);
                 return 1;
             }
             catch (Exception)
