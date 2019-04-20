@@ -16,7 +16,7 @@ namespace dev_2.Tests
         [DataRow('*')]
         [DataRow('&')]
         [ExpectedException(typeof(Exception), "Unknown symbol!")]
-        public void LetterStatus_Constructor_UnknownSymbol_Exception(char input)
+        public void Constructor_UnknownSymbol_Exception_Check(char input)
         {
             var letter = new LetterStatus(input);
         }
@@ -30,7 +30,7 @@ namespace dev_2.Tests
         [DataRow('я')]
         [DataRow('ь')]
         [DataRow('+')]
-        public void Constructor_RightSymbol_Exception(char input)
+        public void Constructor_RightSymbol_Check(char input)
         {
             var letter = new LetterStatus(input);
         }
