@@ -20,7 +20,7 @@ namespace dev_2
             {
                 foreach (var arg in args)
                 {
-                    var myPhonemeBuilder = new PhonemeBuilderFromWord(arg.ToString());
+                    var myPhonemeBuilder = new PhonemeBuilderFromWord(arg);
                     myPhonemeBuilder.BuildAndShowPhoneme();
                 }
             }
