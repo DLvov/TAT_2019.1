@@ -13,7 +13,7 @@ namespace dev_2
         private static readonly string PAIR_FOR_CONSONANT = "пфктшсбвгджз";
         private static readonly string DOUBLE_SOUND_VOWELS = "яюеё";
         private static readonly string SINGLE_SOUND_VOWELS = "ауэоиы";
-        private static readonly string AVAILIABLE_SYMBOLS = "бвгджзйлмнрпфктшсхцчщяюеёауэоиы+ьъ";
+        private static readonly string AVAILIABLE_SYMBOLS = "бвгджзйлмнрпфктшсхцчщяюеёауэоиы+ьъ\0";
 
         char letter;
         char pairLetter;

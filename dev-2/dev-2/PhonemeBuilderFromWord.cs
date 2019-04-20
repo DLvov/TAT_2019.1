@@ -18,17 +18,23 @@ namespace dev_2
         /// <param name="word">Inputed word</param>
         public PhonemeBuilderFromWord(string word)
         {
+            if (word == String.Empty)
+            {
+                throw new Exception("String is empty!");
+            }
+
             if (word.Length < 2)
             {
                 throw new Exception("String length is shorter than 2 characters!");
             }
+
             this.word = word;
         }
 
         /// <summary>
-        /// This method builds a phoneme based on data from a list of letter statuses of word.
+        /// This method builds a phoneme based on data from a list of letter statuses of word and return it.
         /// </summary>
-        public void BuildPhoneme()
+        public string BuildPhoneme()
         {
             var statusList = new List<LetterStatus>();
 
@@ -102,6 +108,8 @@ namespace dev_2
                         break;
                 }
             }
+
+            return phoneme.ToString();
         }
 
         /// <summary>
