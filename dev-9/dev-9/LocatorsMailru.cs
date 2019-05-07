@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace dev_9
+﻿namespace dev_9
 {
-    class LocatorsMailru
+    public class LocatorsMailru
     {
+        public class LoginPageLocators
+        {
+            public string LoginLocator { get; } = "//input[@id = 'mailbox:login']";
+            public string PasswordLocator { get; } = "//input[@id = 'mailbox:password']";
+            public string SubmitButtonLocator { get; } = "//input[@class = 'o-control']";
+        }
     }
 }
