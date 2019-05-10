@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<cars>
+  <car>
+    <brand>Volvo</brand>
+    <model>A2</model>
+    <amount>30</amount>
+    <price>5000</price>
+  </car>
+  <car>
+    <brand>Mazda</brand>
+    <model>B3</model>
+    <amount>56</amount>
+    <price>9000</price>
+  </car>
+  <car>
+    <brand>Mazda</brand>
+    <model>C1</model>
+    <amount>48</amount>
+    <price>7500</price>
+  </car>
+  <car>
+    <brand>Lamborgini</brand>
+    <model>GT</model>
+    <amount>12</amount>
+    <price>11000</price>
+  </car>
+  <car>
+    <brand>Lamborgini</brand>
+    <model>GTR</model>
+    <amount>9</amount>
+    <price>15000</price>
+  </car>
+</cars>
