@@ -3,7 +3,7 @@
     /// <summary>
     /// This class contains characteristics of letter
     /// </summary>
-    class LetterStatus
+    public class LetterStatus
     {
         public char letter;
         public bool isConsonant;
@@ -11,13 +11,13 @@
         public bool isPaired;
         public bool isSpecial;
         public char pair;
-
         /// <summary>
         /// This constructor initialize letter.
         /// </summary>
         /// <param name="letter">Letter</param>
         public LetterStatus(char letter)
         {
+            LetterStatusMaker.AvailiableSymbolCheck(letter);
             this.letter = letter;
         }
 
@@ -29,6 +29,7 @@
         /// <param name="isSpecial">Is letter a special symbol</param>
         public LetterStatus(char letter, char pair, bool isSpecial)
         {
+            LetterStatusMaker.AvailiableSymbolCheck(letter);
             this.letter = letter;
             this.pair = pair;
             this.isSpecial = isSpecial;
@@ -44,6 +45,7 @@
         /// <param name="pair">Pair of the letter</param>
         public LetterStatus(char letter, bool isConsonant, bool isVoiced, bool isPaired, char pair)
         {
+            LetterStatusMaker.AvailiableSymbolCheck(letter);
             this.letter = letter;
             this.isConsonant = isConsonant;
             this.isVoiced = isVoiced;

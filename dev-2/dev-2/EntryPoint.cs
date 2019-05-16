@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace dev_2
 {
@@ -15,27 +14,19 @@ namespace dev_2
         /// <returns 0>Normal work</returns>
         /// <returns 1>String length is shorter than 2 characters</returns>
         /// <returns 2>Something wrong</returns>
-        static int Main(string[] args)
+        static void Main(string[] args)
         {
             try
             {
                 foreach (var arg in args)
                 {
-                    var myPhonemeBuilder = new PhonemeBuilderFromWord(arg.ToString());
+                    var myPhonemeBuilder = new PhonemeBuilderFromWord(arg);
                     myPhonemeBuilder.BuildAndShowPhoneme();
                 }
-                
-                return 0;
             }
-            catch (FormatException ex)
+            catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                return 1;
-            }
-            catch (Exception)
-            {
-                Console.WriteLine("Something wrong!");
-                return 2;
+                Console.WriteLine("Error: " + ex.Message);
             }
         }
     }
