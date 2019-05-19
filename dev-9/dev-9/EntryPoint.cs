@@ -6,7 +6,10 @@ namespace dev_9
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var protonUser = new User("vasyapupkin4484", "passslovo56223");
+            var mailruUser = new User("vasya.pupkin1988148", "passslovo63728");
+            var loginPage = new LoginPageMailru();
+            loginPage.LoginAndNavigateToInboxPage(mailruUser);
         }
     }
 }

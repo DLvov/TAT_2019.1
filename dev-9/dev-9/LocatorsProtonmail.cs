@@ -4,9 +4,10 @@
     {
         public class LoginPageLocators
         {
+            public string URL { get; } = "https://mail.protonmail.com";
             public string LoginLocator { get; } = "//input[@id = 'username']";
             public string PasswordLocator { get; } = "//input[@id = 'password']";
-            public string SubmitButtonLocator { get; } = "//input[@id = 'login_btn']";
+            public string SubmitButtonLocator { get; } = "//button[@id = 'login_btn']";
         }
 
         public class InboxPageLocators

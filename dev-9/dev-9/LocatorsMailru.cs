@@ -4,6 +4,7 @@
     {
         public class LoginPageLocators
         {
+            public string URL { get; } = "https://mail.ru/";
             public string LoginLocator { get; } = "//input[@id = 'mailbox:login']";
             public string PasswordLocator { get; } = "//input[@id = 'mailbox:password']";
             public string SubmitButtonLocator { get; } = "//input[@class = 'o-control']";
